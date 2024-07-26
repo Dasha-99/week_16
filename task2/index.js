@@ -13,7 +13,7 @@ let engineCapacityElement = document.getElementById('engine-capacity');
 engineCapacityElement.addEventListener('change', validationEngineCapacity);
 
 
-
+/*функция расчета цены*/
 function calculatePrice(evt) {
     evt.preventDefault();
     deleteResultValues();
@@ -64,6 +64,7 @@ function calculatePrice(evt) {
     printResultValues(resultValues);
 }
 
+/*Вывод данных для расчета и его результат*/
 function printResultValues(resultValues) {
     let resultClassNames = ["result__brand", "result__model", "result__fuel-type",
         "result__engine-capacity", "result__car-condition", "result__amount-owners", "result__payment-type", "result__price"];
@@ -76,6 +77,7 @@ function printResultValues(resultValues) {
     }
 }
 
+/*Очищение данных в блоке для вывода результата*/
 function deleteResultValues() {
     let resultClassNames = ["result__brand", "result__model", "result__fuel-type",
         "result__engine-capacity", "result__car-condition", "result__amount-owners", "result__payment-type", "result__price"];
@@ -87,6 +89,7 @@ function deleteResultValues() {
     }
 }
 
+/* валидация вывода объема двигателя*/
 function validationEngineCapacity() {
     let errorMessage = document.querySelector('.calculator__error-message');
     errorMessage.style.display = 'none';
@@ -102,6 +105,7 @@ function validationEngineCapacity() {
 
 }
 
+/*получение значения типа топлива*/
 function getFuelType() {
     let fuelTypeElements = document.querySelectorAll('.calculator__fuel-type');
     for (let item of fuelTypeElements) {
@@ -111,7 +115,7 @@ function getFuelType() {
     }
 }
 
-
+/*появление и скрытие блока с количеством владельцев*/
 function selectedCondition(evt) {
     let amountOwnersBlock = document.querySelector('.calculator__owners');
     if (evt.target.value == 'used-car') {
@@ -122,7 +126,7 @@ function selectedCondition(evt) {
     }
 }
 
-
+/*динамическое появление списка моделей автобомиля в соответствии с выбранной маркой*/
 function changeCarModel() {
     let modelBlocks = document.querySelectorAll('.calculator__model');
     modelBlocks.forEach((item) => {
@@ -151,6 +155,7 @@ function changeCarModel() {
 
 }
 
+/*изменение рамки полей ввода при различных действиях*/
 let selectElements = document.querySelectorAll('.calculator__value');
 selectElements.forEach((item) => {
     item.addEventListener('focus', function () {
@@ -168,10 +173,11 @@ selectElements.forEach((item) => {
     })
     item.addEventListener('mouseout', function () {
         console.log(item)
-        item.style.border = '';
+        item.style.border =  '1px solid #414040';
     })
 })
 
+/*переменные для рассчетов и вывода результата*/
 const priceByBrandAndModel = {
     'reno-duster': 500000,
     'reno-logan': 600000,

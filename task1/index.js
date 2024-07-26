@@ -14,6 +14,7 @@ elemensBorders.forEach((input) => {
     })
 })
 
+/* валидация данных всех полей ввода */
 const formElements = Array.from(document.querySelector('.form').elements);
 formElements.forEach((input) => {
     input.addEventListener('input', function () {
@@ -21,6 +22,7 @@ formElements.forEach((input) => {
     })
 })
 
+/* валидация введенного имени */
 function validationName() {
     let nameElement = document.getElementById('name');
     let nameRegex = /^[a-zа-яё ]+$/i;
@@ -31,6 +33,7 @@ function validationName() {
     return true;
 }
 
+/* валидация введенного адреса почты*/
 function validationEmail() {
     let emailElement = document.getElementById('email');
     let emailRegexp = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
@@ -41,7 +44,7 @@ function validationEmail() {
     return true;
 }
 
-
+/* валидация возраста*/
 function validationAge() {
     let ageElement = document.getElementById('age');
     let ageValue = Number(ageElement.value);
@@ -51,6 +54,7 @@ function validationAge() {
     return true;
 }
 
+/* проверка выбора типа работы*/
 function validationJobType() {
     let jobTypeValue = jobTypeElement.value;
     if (jobTypeValue === 'default') {
@@ -60,9 +64,10 @@ function validationJobType() {
 
 }
 
+/*валидация пароля*/
 function validationPassword() {
     let passwordElement = document.getElementById('password');
-    let passwordRegex = /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)/;
+    let passwordRegex = /(?=.*[A-ZА-Я])(?=.*[a-zа-я])(?=.*\d)/;
     let passwordValue = passwordElement.value.trim();
     if (!passwordRegex.test(passwordValue) || passwordValue.length < 8) {
         return false;
@@ -70,6 +75,7 @@ function validationPassword() {
     return true;
 }
 
+/* проверка согласия*/
 function validationCheckbox() {
     let checkboxElement = document.querySelector('.form__checkbox');
     let checkboxValue = checkboxElement.checked;
@@ -79,7 +85,7 @@ function validationCheckbox() {
     return true
 }
 
-
+/*валидация всех полей формы*/
 function validationForm(input) {
     let resultFieldValidation = true;
     switch (input.name) {
@@ -116,6 +122,7 @@ function validationForm(input) {
     checkAllFields();
 }
 
+/* проверка заполненности и корректности полей формы*/
 function checkAllFields() {
     if (validationName() && validationEmail() && validationAge() && validationJobType() && validationPassword() && validationCheckbox()) {
         button.removeAttribute('disabled');
@@ -138,6 +145,7 @@ form.addEventListener('submit', function (evt) {
     }
 })
 
+/* вывод в консоль данных из формы*/
 function printFormFields(formFields) {
     for (let temp of formFields) {
         switch (temp.name) {
