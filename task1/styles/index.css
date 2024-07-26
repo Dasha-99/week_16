@@ -1,0 +1,66 @@
+.main {
+  margin: 40px;
+}
+.main__title {
+  color: rgb(103, 25, 25);
+}
+
+.form {
+  width: -moz-max-content;
+  width: max-content;
+  background-color: rgba(238, 214, 182, 0.382);
+  border-radius: 10px;
+  padding: 30px;
+  font-size: 20px;
+  color: rgb(103, 25, 25);
+}
+.form__field {
+  border-bottom: 1px dashed rgb(103, 25, 25);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.form__label {
+  margin-right: 10px;
+}
+.form__label--sex {
+  margin-right: 50px;
+}
+.form__text {
+  border: 1px solid rgb(103, 25, 25);
+  border-radius: 5px;
+  width: 65%;
+  padding: 5px 10px;
+  color: rgb(103, 25, 25);
+}
+.form__sex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form__jobs {
+  color: rgb(103, 25, 25);
+  border: 1px solid rgb(103, 25, 25);
+  border-radius: 5px;
+}
+.form__job-option:focus {
+  background-color: rgba(103, 25, 25, 0.5);
+}
+.form__button {
+  width: 200px;
+  height: 60px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(103, 25, 25);
+  color: #ffffff;
+}
+.form__button:enabled {
+  cursor: pointer;
+  opacity: 1;
+}
+.form__button:disabled {
+  opacity: 0.5;
+}
+.form__error {
+  display: none;
+  color: #ff0000;
+}/*# sourceMappingURL=index.css.map */

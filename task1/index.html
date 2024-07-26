@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="main__title">Форма регистрации</h1>
+      <form class="form main__form" action="#">
+        <div class="form__field">
+          <label class="form__label" for="name">Имя</label>
+          <input
+            class="form__text"
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder="Иван"
+            minlength="2"
+            maxlength="20"
+          />
+          <span class="form__error form__error--name"
+            >Имя может содержать только буквы и пробелы. Минимальная длина имени
+            - 2 символа, максимальная - 20.</span
+          >
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="email">E-Mail</label>
+          <input
+            class="form__text"
+            type="email"
+            name="email"
+            id="email"
+            required
+            placeholder="ivan@yandex.ru"
+          />
+          <span class="form__error form__error--email"
+            >Неверно введен email.</span
+          >
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="age">Возраст</label>
+          <input
+            class="form__text"
+            type="number"
+            name="age"
+            id="age"
+            min="1"
+            max="130"
+            required
+            placeholder="20"
+          />
+          <span class="form__error form__error--age"
+            >Введен некорректный возраст</span
+          >
+        </div>
+        <div class="form__field form__field--sex">
+          <p class="form__label">Пол</p>
+          <input
+            class="form__radio"
+            type="radio"
+            name="sex"
+            id="male-sex"
+            value="male"
+            checked
+          />
+          <label class="form__label form__label--sex" for="male-sex">
+            Мужской
+          </label>
+          <input
+            class="form__radio"
+            type="radio"
+            name="sex"
+            id="female-sex"
+            value="female"
+          />
+          <label class="form__label form__label--sex" for="female-sex">
+            Женский
+          </label>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="job-types">Профессия</label>
+          <select class="form__jobs" name="job-types" id="job-types" required>
+            <option class="form__job-option" value="default" selected disabled>
+              --Ваша профессия--
+            </option>
+            <option class="form__job-option" value="doctor">Врач</option>
+            <option class="form__job-option" value="programmer">
+              Программист
+            </option>
+            <option class="form__job-option" value="teacher">Учитель</option>
+            <option class="form__job-option" value="designer">Дизайнер</option>
+            <option class="form__job-option" value="engineer">Инженер</option>
+            <option class="form__job-option" value="salesman">Продавец</option>
+            <option class="form__job-option" value="other">Другое</option>
+          </select>
+          <span class="form__error form__error--job-types"
+            >Вы не выбрали профессию.</span
+          >
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="password">Пароль</label>
+          <input
+            class="form__text"
+            type="password"
+            name="password"
+            id="password"
+            required
+            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d){8,}"
+            title="Пароль должен содержать как минимум одну заглавную букву, одну строчную букву и одну цифру. Минимальная длина пароля - 8 символов."
+            placeholder="********"
+            minlength="8"
+          />
+          <span class="form__error form__error--password"
+            >Пароль должен содержать как минимум одну заглавную букву, одну
+            строчную букву и одну цифру. Минимальная длина пароля - 8
+            символов.</span
+          >
+        </div>
+        <div class="form__field">
+          <input
+            class="form__checkbox"
+            type="checkbox"
+            name="checkbox"
+            id="checkbox"
+            required
+          />
+          <label class="form__label" for="checkbox"
+            >Согласие с обработкой данных</label
+          >
+          <span class="form__error form__error--checkbox"
+            >Необходимо согласиться с обработкой данных.</span
+          >
+        </div>
+        <button class="form__button" type="submit" disabled>
+          Зарегистрироваться
+        </button>
+      </form>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>

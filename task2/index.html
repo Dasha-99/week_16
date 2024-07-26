@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="calculator">
+      <h1 class="calculator__title">Калькулятор стоимости авто</h1>
+      <form class="calculator__form" action="">
+        <div class="calculator__field calculator__brand-car">
+          <label class="calculator__label" for="brand-car"
+            >Марка автомобиля</label
+          >
+          <select
+            class="calculator__value"
+            name="brand-car"
+            id="brand-car"
+            required
+          >
+            <option value="reno">Reno</option>
+            <option value="opel">Opel</option>
+            <option value="mazda">Mazda</option>
+            <option value="jaguar">Jaguar</option>
+          </select>
+        </div>
+        <div
+          class="calculator__field calculator__model calculator__model--reno"
+        >
+          <label class="calculator__label" for="reno-model"
+            >Модель автомобиля</label
+          >
+          <select class="calculator__value" name="reno-model" id="reno-model">
+            <option value="duster">Duster</option>
+            <option value="logan">Logan</option>
+            <option value="sandero">Sandero</option>
+            <option value="megane">Megane</option>
+          </select>
+        </div>
+        <div
+          class="calculator__field calculator__field--hidden calculator__model calculator__model--opel"
+        >
+          <label class="calculator__label" for="opel-model"
+            >Модель автомобиля</label
+          >
+          <select class="calculator__value" name="opel-model" id="opel-model">
+            <option value="astra">Astra</option>
+            <option value="corsa">Corsa</option>
+            <option value="mokka">Mokka</option>
+          </select>
+        </div>
+        <div
+          class="calculator__field calculator__field--hidden calculator__model calculator__model--mazda"
+        >
+          <label class="calculator__label" for="mazda-model"
+            >Модель автомобиля</label
+          >
+          <select class="calculator__value" name="mazda-model" id="mazda-model">
+            <option value="6">6</option>
+            <option value="cx-5">CX-5</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div
+          class="calculator__field calculator__field--hidden calculator__model calculator__model--jaguar"
+        >
+          <label class="calculator__label" for="jaguar-model"
+            >Модель автомобиля</label
+          >
+          <select
+            class="calculator__value"
+            name="jaguar-model"
+            id="jaguar-model"
+          >
+            <option value="xj">XJ</option>
+            <option value="xf">XF</option>
+            <option value="xe">XE</option>
+            <option value="e-pace">E-Pace</option>
+          </select>
+        </div>
+        <div class="calculator__field">
+          <p class="calculator__label">Тип топлива</p>
+          <div class="calculator__radio-group">
+            <div>
+              <input
+                class="calculator__fuel-type"
+                type="radio"
+                name="fuel-type"
+                id="petrol"
+                value="petrol"
+                checked
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="petrol"
+                >Бензин</label
+              >
+            </div>
+            <div>
+              <input
+                class="calculator__fuel-type"
+                type="radio"
+                name="fuel-type"
+                id="diesel"
+                value="diesel"
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="diesel"
+                >Дизель</label
+              >
+            </div>
+            <div>
+              <input
+                class="calculator__fuel-type"
+                type="radio"
+                name="fuel-type"
+                id="gas"
+                value="gas"
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="gas"
+                >Газ</label
+              >
+            </div>
+            <div>
+              <input
+                class="calculator__fuel-type"
+                type="radio"
+                name="fuel-type"
+                id="electricity"
+                value="electricity"
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="electricity"
+                >Электричество</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="calculator__field">
+          <label class="calculator__label" for="engine-capacity"
+            >Объем двигателя (в литрах)</label
+          >
+          <input
+            class="calculator__value calculator__value--input"
+            type="number"
+            step="0.1"
+            name="engine-capacity"
+            id="engine-capacity"
+            min="1.1"
+          />
+          <p class="calculator__error-message">
+            Введите значение объема двигателя от 1.1 литра до 3.5 литров.
+          </p>
+        </div>
+        <div class="calculator__field">
+          <p class="calculator__label">Состояние автомобиля</p>
+          <div class="calculator__radio-group">
+            <div>
+              <input
+                type="radio"
+                name="car-condition"
+                id="new-car"
+                value="new-car"
+                checked
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="new-car"
+                >Новый</label
+              >
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="car-condition"
+                id="used-car"
+                value="used-car"
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="used-car"
+                >Подержанный</label
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="calculator__field calculator__field--hidden calculator__owners"
+        >
+          <p class="calculator__label">Количество владельцев</p>
+          <div class="calculator__radio-group">
+            <div>
+              <input
+                class="calculator__amount-owners"
+                type="radio"
+                name="owners"
+                id="few-owners"
+                value="few-owners"
+                checked
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="few-owners"
+              >
+                1-2 владельца
+              </label>
+            </div>
+            <div>
+              <input
+                class="calculator__amount-owners"
+                type="radio"
+                name="owners"
+                id="many-owners"
+                value="many-owners"
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="many-owners"
+                >более 3-х владельцев</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="calculator__field">
+          <p class="calculator__label">Способ оплаты</p>
+          <div class="calculator__radio-group">
+            <div>
+              <input
+                class="calculator__payment-type"
+                type="radio"
+                name="payment-type"
+                id="bank-card"
+                value="bank-card"
+                checked
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="bank-card"
+                >Картой</label
+              >
+            </div>
+            <div>
+              <input
+                class="calculator__payment-type"
+                type="radio"
+                name="payment-type"
+                id="cash"
+                value="cash"
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="cash"
+                >Наличными</label
+              >
+            </div>
+            <div>
+              <input
+                class="calculator__payment-type"
+                type="radio"
+                name="payment-type"
+                id="legal-person"
+                value="legal-person"
+              />
+              <label
+                class="calculator__label calculator__radio-button"
+                for="legal-person"
+                >Счет на юридическое лицо</label
+              >
+            </div>
+          </div>
+        </div>
+        <button class="calculator__button" type="submit">Рассчитать</button>
+      </form>
+    </div>
+    <div class="result">
+      <p class="result__field result__brand">
+        Марка автомобиля: <span class="result__value"></span>
+      </p>
+      <p class="result__field result__model">
+        Модель автомобиля: <span class="result__value"></span>
+      </p>
+      <p class="result__field result__fuel-type">
+        Тип топлива: <span class="result__value"></span>
+      </p>
+      <p class="result__field result__engine-capacity">
+        Объем двигателя (в литрах): <span class="result__value"></span>
+      </p>
+      <p class="result__field result__car-condition">
+        Состояние автомобиля: <span class="result__value"></span>
+      </p>
+      <p class="result__field result__amount-owners">
+        Количество владельцев: <span class="result__value"></span>
+      </p>
+      <p class="result__field result__payment-type">
+        Способ оплаты: <span class="result__value"></span>
+      </p>
+      <p class="result__field result__price">
+        Цена: <span class="result__value"></span>
+      </p>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
