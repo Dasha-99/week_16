@@ -51,7 +51,6 @@ function calculatePrice(evt) {
     else {
         priceResult += 50000;
     }
-    console.log(carCondition, amounOwners);
     let paymentTypeElements = document.querySelectorAll('.calculator__payment-type');
     let paymentType = paymentTypeElements[0].value;
     for (let item of paymentTypeElements) {
@@ -159,7 +158,6 @@ function changeCarModel() {
 let selectElements = document.querySelectorAll('.calculator__value');
 selectElements.forEach((item) => {
     item.addEventListener('focus', function () {
-        console.log(item)
         item.outline = 'none';
         item.style.borderColor = '2px solid #e70404';
     })
@@ -167,12 +165,10 @@ selectElements.forEach((item) => {
         item.style.border = '1px solid #414040';
     })
     item.addEventListener('mouseover', function () {
-        console.log(item)
         item.outline = 'none';
         item.style.border = '2px solid #e70404';
     })
     item.addEventListener('mouseout', function () {
-        console.log(item)
         item.style.border =  '1px solid #414040';
     })
 })
